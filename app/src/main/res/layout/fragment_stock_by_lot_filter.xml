@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".fragments.FilterFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/header"
+                android:background="@color/colorPrimary">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="0dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/filter"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/secondary_title"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <LinearLayout
+                    android:id="@+id/layoutClose"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/dimen20dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/imageViewBack"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:src="@drawable/ic_close"
+                        app:tint="@color/white">
+
+                    </ImageView>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/dimen20dp"
+                android:layout_below="@+id/header"
+                android:orientation="vertical">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:id="@+id/ll_order_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp"
+                            android:background="@drawable/drawable_edit_text_normal"
+                            android:padding="@dimen/dimen10dp">
+
+                            <EditText
+                                android:id="@+id/et_order"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:hint="@string/lot"
+                                android:singleLine="true"
+                                android:text=""
+
+                                android:textColor="#000"
+                                android:textColorHint="@color/colorHintColor"
+                                android:textSize="16sp">
+
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_order_site"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp"
+                            android:layout_below="@+id/ll_order_no"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/drawable_edit_text_normal"
+                            android:padding="@dimen/dimen10dp">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:hint="@string/sub_lot"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="#000"
+                                android:textColorHint="@color/colorHintColor"
+                                android:textSize="16sp">
+
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_supplier"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp"
+                            android:layout_below="@+id/ll_order_site"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/drawable_edit_text_normal"
+                            android:padding="@dimen/dimen10dp">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:hint="@string/accepted_quantity"
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:text=""
+
+                                android:textColor="#000"
+                                android:textColorHint="@color/colorHintColor"
+                                android:textSize="16sp">
+
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_internal"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp"
+                            android:layout_below="@+id/ll_supplier"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/drawable_edit_text_normal"
+                            android:padding="@dimen/dimen10dp">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:hint="@string/quantity_controlled"
+
+                                android:singleLine="true"
+                                android:text=""
+
+                                android:textColor="#000"
+                                android:textColorHint="@color/colorHintColor"
+                                android:textSize="16sp">
+
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_rejected"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp"
+                            android:layout_below="@+id/ll_internal"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/drawable_edit_text_normal"
+                            android:padding="@dimen/dimen10dp">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:hint="@string/rejected_quantity"
+
+                                android:singleLine="true"
+                                android:text=""
+
+                                android:textColor="#000"
+                                android:textColorHint="@color/colorHintColor"
+                                android:textSize="16sp">
+
+                            </EditText>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_expiry"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp"
+                            android:layout_below="@+id/ll_rejected"
+                            android:layout_marginTop="@dimen/dimen10dp"
+                            android:background="@drawable/drawable_edit_text_normal"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/dimen10dp">
+
+                            <EditText
+                                android:id="@+id/edit_expire"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_toStartOf="@+id/iv_calendar_expire"
+                                android:background="@null"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="@string/expiration_date"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="#000"
+                                android:textSize="16sp">
+
+                            </EditText>
+
+                            <ImageView
+                                android:id="@+id/iv_calendar_expire"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:paddingVertical="3dp"
+                                android:src="@drawable/ic_calendar">
+
+                            </ImageView>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_use_by"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp"
+                            android:layout_below="@+id/rl_expiry"
+                            android:layout_marginTop="@dimen/dimen10dp"
+                            android:background="@drawable/drawable_edit_text_normal"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/dimen10dp">
+
+                            <EditText
+                                android:id="@+id/edit_use_by"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_toStartOf="@+id/iv_calendar"
+                                android:background="@null"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="@string/use_by_date"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="#000"
+                                android:textSize="16sp">
+
+                            </EditText>
+
+                            <ImageView
+                                android:id="@+id/iv_calendar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:paddingVertical="3dp"
+                                android:src="@drawable/ic_calendar">
+
+                            </ImageView>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_potency"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp"
+                            android:layout_below="@+id/rl_use_by"
+                            android:layout_marginTop="@dimen/dimen10dp"
+                            android:background="@drawable/drawable_edit_text_normal"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/dimen10dp">
+
+                            <EditText
+                                android:id="@+id/edit_potency"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:hint="@string/potency"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="#000"
+                                android:textSize="16sp">
+
+                            </EditText>
+
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+
+
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_view_result"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/normal_button_height"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/dimen20dp"
+                android:layout_marginStart="@dimen/dimen20dp"
+                android:layout_marginTop="@dimen/dimen20dp"
+                android:layout_marginEnd="@dimen/dimen20dp"
+                android:layout_marginBottom="@dimen/dimen20dp"
+                android:background="@drawable/drawable_edit_text_normal"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/view_result"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/buttons_tabs">
+
+            </androidx.appcompat.widget.AppCompatButton>
+        </RelativeLayout>
+
+    </FrameLayout>
+</layout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorPrimary">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="0dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/filter"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/secondary_title"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <LinearLayout
+                    android:id="@+id/layoutClose"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/dimen20dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/imageViewBack"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:src="@drawable/ic_close"
+                        app:tint="@color/white">
+
+                    </ImageView>
+                </LinearLayout>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/dimen20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:id="@+id/ll_order_no"
+                    android:background="@drawable/drawable_edit_text_normal">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/et_status"
+                        android:background="@null"
+                        android:hint="@string/status"
+                        android:paddingHorizontal="5dp"
+                        android:singleLine="true"
+                        android:text=""
+
+                        android:textColor="#000"
+                        android:textColorHint="@color/colorHintColor"
+                        android:textSize="16sp">
+
+                    </EditText>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:id="@+id/ll_order_site"
+                    android:layout_below="@+id/ll_order_no"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/drawable_edit_text_normal">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:id="@+id/et_description"
+                        android:hint="@string/description"
+
+                        android:paddingHorizontal="5dp"
+                        android:singleLine="true"
+                        android:text=""
+
+                        android:textColor="#000"
+                        android:textColorHint="@color/colorHintColor"
+                        android:textSize="16sp">
+
+                    </EditText>
+                </LinearLayout>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_view_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/normal_button_height"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginBottom="@dimen/dimen20dp"
+                    android:background="@drawable/drawable_edit_text_normal"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="@string/view_result"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttons_tabs">
+
+                </androidx.appcompat.widget.AppCompatButton>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+</layout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.deltafood.ui.login.LoginViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.login.LoginActivity">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@color/white"
+            android:padding="20dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:src="@drawable/logo">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+            <LinearLayout
+                android:id="@+id/layout_email"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_50_dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/drawable_edit_text_normal">
+
+                <EditText
+                    android:id="@+id/edit_email_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="@string/prompt_email_address"
+                    android:inputType="textNoSuggestions|textEmailAddress"
+                    android:paddingHorizontal="@dimen/activity_horizontal_padding_12"
+                    android:singleLine="true"
+                    android:text="@={viewmodel.userName}"
+                    android:textColor="#000"
+                    android:textColorHint="@color/colorHintColor"
+                    android:textSize="16sp">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_50_dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin_24"
+                android:background="@drawable/drawable_edit_text_normal">
+
+                <EditText
+                    android:id="@+id/edit_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="@string/prompt_password"
+                    android:inputType="textNoSuggestions|textPassword"
+                    android:paddingHorizontal="@dimen/activity_horizontal_padding_12"
+                    android:singleLine="true"
+                    android:text="@={viewmodel.password}"
+                    android:textColor="#000"
+                    android:textColorHint="@color/colorHintColor"
+                    android:textSize="16sp">
+
+                </EditText>
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/normal_button_height"
+                android:backgroundTint="@color/colorPrimary"
+                android:background="@drawable/drawable_edit_text_normal"
+                android:text="@string/prompt_login"
+                android:layout_marginTop="20sp"
+                android:textAllCaps="true"
+                android:onClick="@{() -> viewmodel.login()}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/buttons_tabs">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+
+
+        </LinearLayout>
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:id="@+id/progress_circular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="@dimen/dimen10dp"
+        app:cardCornerRadius="8dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen10dp"
+            android:id="@+id/ll_main"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_po_no"
+                android:text="Order No: POA111111"
+                android:textSize="14sp"
+                android:padding="5dp"
+                android:textColor="@color/colorAccent">
+
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_date"
+                android:text="Expected Receipt Date: 15/03/2022"
+                android:textSize="12sp"
+                android:paddingHorizontal="5dp"
+                android:textColor="@color/text_color">
+
+            </TextView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="@dimen/dimen5dp"
+                android:background="#f0f0f0">
+
+            </View>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:weightSum="3">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:lineSpacingExtra="@dimen/dimen5dp"
+                    android:id="@+id/tv_details"
+                    android:text="Order Site: AE2334\nInternal Or ….. : Internal"
+                    android:textSize="12sp"
+                    android:textColor="#909090">
+
+                </TextView>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:lineSpacingExtra="@dimen/dimen5dp"
+                    android:id="@+id/tv_vendor"
+                    android:text="Supplier: AAL123"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:textSize="12sp"
+                    android:textColor="#909090">
+
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

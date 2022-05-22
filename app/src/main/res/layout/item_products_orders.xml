@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="@dimen/dimen10dp"
+        app:cardCornerRadius="8dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen10dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_po_no"
+                        android:text="PO No: 1100"
+                        android:textSize="10sp"
+                        android:padding="5dp"
+                        android:textColor="@color/text_color">
+
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_remaining_qty"
+                        android:text="Remaining : 1008"
+                        android:textSize="10sp"
+                        android:paddingHorizontal="5dp"
+                        android:textColor="@color/text_color">
+
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_date"
+                        android:text="Expected Receipt Date: 15/03/2022"
+                        android:textSize="10sp"
+                        android:layout_marginTop="@dimen/dimen5dp"
+                        android:paddingHorizontal="5dp"
+                        android:textColor="@color/text_color">
+
+                    </TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layoutFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/dimen10dp"
+                    android:gravity="end">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_product_id"
+                        android:gravity="center"
+                        android:text="RNDIW45"
+                        android:layout_marginTop="@dimen/dimen10dp"
+                        android:textColor="@color/white"
+                        android:paddingHorizontal="@dimen/dimen5dp"
+                        android:background="@drawable/capsule_bg"
+                        android:textSize="10sp">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="@dimen/dimen5dp"
+                android:background="#f0f0f0">
+
+            </View>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:weightSum="3">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:lineSpacingExtra="2dp"
+                    android:id="@+id/tv_uom"
+                    android:text="UOM: PCA1122902830\nLine: 1100"
+                    android:textSize="10sp"
+                    android:textColor="#909090">
+
+                </TextView>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_qty"
+                    android:layout_weight="1.2"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Quantity: 1022\nBP: AE033"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:textSize="10sp"
+                    android:textColor="#909090">
+
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

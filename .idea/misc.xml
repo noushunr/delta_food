@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/drawable-anydpi/capsule_bg.xml" value="0.1305" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/drawable-v24/drawable_bg.xml" value="0.1305" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/drawable-v24/layout_bg.xml" value="0.1305" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/drawable-v24/layout_bg_green.xml" value="0.1305" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/drawable/drawable_edit_text_normal.xml" value="0.1305" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/drawable/drawable_red_border.xml" value="0.1305" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/drawable/drawable_round_edge.xml" value="0.1305" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_inquiry.xml" value="0.190625" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_location_selection.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_location_wise.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_manufacturing.xml" value="0.190625" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_order_line_selection.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_order_selection.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_orders_receive.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_po_inquiry.xml" value="0.36282527881040894" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_poinquiry.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_poinquiry_products.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_ponumber_selection.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_product_selection.xml" value="0.36015625" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_product_selection_site.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_product_site_stock.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_purchase_receipt.xml" value="0.40197693574958815" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_set_site.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_settings.xml" value="0.190625" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_splash.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_stock_by_lot.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_stock_inventory.xml" value="0.190625" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/activity_stock_status.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/fragment_filter.xml" value="0.264" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/fragment_location_selection_filter.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/fragment_order_line_selection_filter.xml" value="0.36015625" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/fragment_po_inquiry_product_filter.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/fragment_po_order_filter.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/fragment_product_selectioin_filter.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/fragment_product_site_filter.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/fragment_stock_by_lot_filter.xml" value="0.152" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/fragment_stock_filter.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/fragment_unit_selection.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/item_location_selection.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/item_location_wise.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/item_order_line_selection.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/item_order_selection.xml" value="0.36015625" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/item_po_inquiry.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/item_po_order_selection.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/item_products_orders.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/item_products_selection.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/item_products_site.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/item_sites.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/item_stock_by_lot.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/item_stock_status.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/item_unit.xml" value="0.38125" />
+        <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1305" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
