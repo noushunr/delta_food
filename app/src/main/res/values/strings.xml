@@ -100,4 +100,22 @@
     <string name="date">Date</string>
     <string name="request"><![CDATA[<PARAM><GRP ID="GRP1"><FLD NAME="SITE">AE022</FLD></GRP></PARAM>]]></string>
     <string name="uom">UOM</string>
+    <string name="no_record">No record found</string>
+    <string name="save">Save</string>
+    <string name="create">Create</string>
+    <string name="delete">Delete</string>
+    <string name="from_io">From Io</string>
+    <string name="from_st">From St</string>
+    <string name="to_sta">To Sta</string>
+    <string name="stock_changes">Stock Change</string>
+    <string name="transaction_selection">Transaction Selection</string>
+    <string name="name">Name</string>
+    <string name="select">Select</string>
+    <string name="select_stock">Select Stock</string>
+    <string name="to_site">To Site</string>
+    <string name="stock">Stock</string>
+    <string name="select_site">Slect Site</string>
+    <string name="company">Company</string>
+    <string name="site">Site</string>
+    <string name="to_loc">To Loc</string>
 </resources>

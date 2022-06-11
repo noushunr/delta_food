@@ -203,12 +203,11 @@ class POInquiryViewModel(
                                 }
                             }
                         }
-                        poInquiryList?.postValue(alPOInquiry)
-                        listener?.onSuccess()
+
                     }
                 }
-
-
+                poInquiryList?.postValue(alPOInquiry)
+                listener?.onSuccess()
             } catch (error: ErrorBodyException) {
                 try {
                     println(error.message.toString())
@@ -250,12 +249,18 @@ class POInquiryViewModel(
                                 poInquiry.productId = fields.nodeValue
                             if (item.nodeValue.equals("ITMDES"))
                                 poInquiry.description = fields.nodeValue
+                            if (item.nodeValue.equals("STU"))
+                                poInquiry.uomStu = fields.nodeValue
                             if (item.nodeValue.equals("UOM"))
                                 poInquiry.uom = fields.nodeValue
                             if (item.nodeValue.equals("QTYSTU"))
                                 poInquiry.remQty = fields.nodeValue
                             if (item.nodeValue.equals("LINCLEFLG"))
                                 poInquiry.type = fields.nodeValue
+                            if (item.nodeValue.equals("QTYUOM"))
+                                poInquiry.qtyuom = fields.nodeValue
+                            if (item.nodeValue.equals("RCPQTYSTU"))
+                                poInquiry.rcpQty = fields.nodeValue
                         }
                     }
                 }

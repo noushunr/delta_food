@@ -68,6 +68,11 @@ class PONumberSelectionActivity : AppCompatActivity() , KodeinAware, NetworkList
         }
         viewModel?.liveOrders?.observe(this){
             adapter?.submitList(it)
+            if (it?.size == 0){
+                binding?.tvEmpty.visibility = View.VISIBLE
+            }else{
+                binding?.tvEmpty.visibility = View.GONE
+            }
         }
     }
 

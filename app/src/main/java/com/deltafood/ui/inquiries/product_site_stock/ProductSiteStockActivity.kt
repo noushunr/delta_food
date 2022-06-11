@@ -64,6 +64,11 @@ class ProductSiteStockActivity : AppCompatActivity() , KodeinAware, NetworkListe
             binding?.tvResults.text = "${it.size} Results"
             var adapter = LocationWiseAdapter(this, it)
             binding?.rvLocation.adapter = adapter
+            if (it?.size == 0){
+                binding?.tvEmpty.visibility = View.VISIBLE
+            }else{
+                binding?.tvEmpty.visibility = View.GONE
+            }
         }
     }
 

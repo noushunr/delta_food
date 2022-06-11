@@ -28,17 +28,24 @@ class LocationSelectionActivity : AppCompatActivity(), KodeinAware, NetworkListe
     private val factory: LocationWiseViewModelFactory by instance()
     private lateinit var binding : ActivityLocationSelectionBinding
     private lateinit var appPreferences : PrefManager
+    private var toSite = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLocationSelectionBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+        if (intent.hasExtra("toSite"))
+            toSite = intent.getStringExtra("toSite")!!
         supportActionBar?.hide()
         appPreferences = PrefManager(this)
         viewModel = ViewModelProvider(this, factory).get(LocationWiseViewModel::class.java)
         viewModel?.listener = this
         var site = appPreferences?.setSite
         val mString = site!!.split(":").toTypedArray()
-        viewModel?.getLocations(mString[0])
+        if (toSite.isNullOrEmpty()){
+            toSite = mString[0]
+        }
+
+        viewModel?.getLocations(toSite)
         var adapter = LocationSelectionAdapter(this, mutableListOf(),this)
         binding?.rvProducts.adapter = adapter
         binding?.layoutBackClick?.setOnClickListener {
@@ -53,6 +60,11 @@ class LocationSelectionActivity : AppCompatActivity(), KodeinAware, NetworkListe
         }
         viewModel?.liveLocations?.observe(this) {
             adapter?.submitList(it)
+            if (it?.size == 0){
+                binding?.tvEmpty.visibility = View.VISIBLE
+            }else{
+                binding?.tvEmpty.visibility = View.GONE
+            }
         }
     }
 
@@ -83,6 +95,7 @@ class LocationSelectionActivity : AppCompatActivity(), KodeinAware, NetworkListe
         var args = Bundle()
         args.putString("loc_name",locations.locationName)
         args.putString("loc_cat",locations.locCategory)
+        args.putString("ware_house",locations.wareHouse)
         var intent = Intent()
         intent.putExtras(args)
         setResult(RESULT_OK,intent)

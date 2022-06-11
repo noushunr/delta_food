@@ -11,5 +11,8 @@ class POInquiry {
     var remQty : String= ""
     var expectedDate : String= ""
     var type : String= ""
+    var uomStu : String= ""
     var uom : String= ""
+    var qtyuom : String= ""
+    var rcpQty : String= ""
 }

@@ -29,8 +29,8 @@ class POInquiryAdapter(
         var item = alPoInquiries[position]
         holder?.binding?.tvPoNo.text = "Order no: ${item.poNo}"
         holder?.binding?.tvDate.text = "Expected Receipt Date:  ${formatDate(item.expectedDate)}"
-        holder?.binding?.tvDetails.text= "UOM: ${item.uom}\nDescription: ${item.description}"
-        holder?.binding?.tvRemainingQty.text = "Remaining quantity: ${item.remQty}"
+        holder?.binding?.tvDetails.text= "UOM: ${item.uomStu}\nDescription: ${item.description}"
+        holder?.binding?.tvRemainingQty.text = "Remaining quantity: ${item.remQty.toDouble().minus(item.rcpQty.toDouble())}"
         holder?.binding?.tvLineNo.text = "Line: ${item.lineNo}"
         holder?.binding?.tvProductId.text = "${item.productId}"
         holder?.binding?.llMain?.setOnClickListener {

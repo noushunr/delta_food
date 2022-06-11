@@ -64,6 +64,11 @@ class ProductSelectionActivity : AppCompatActivity(), KodeinAware, NetworkListen
         viewModel?.liveProducts?.observe(this) {
             if (it!=null){
                 adapter?.submitList(it)
+                if (it?.size == 0){
+                    binding?.tvEmpty.visibility = View.VISIBLE
+                }else{
+                    binding?.tvEmpty.visibility = View.GONE
+                }
             }
         }
         binding?.layoutFilter?.setOnClickListener {

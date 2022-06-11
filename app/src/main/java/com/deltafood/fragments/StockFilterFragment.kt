@@ -52,6 +52,7 @@ class StockFilterFragment : Fragment() {
 
             activity?.onBackPressed()
         }
+
         binding?.btnViewResult?.setOnClickListener {
             var status = Status()
             status?.description = binding?.etDescription?.text.toString()

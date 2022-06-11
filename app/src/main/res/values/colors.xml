@@ -17,5 +17,6 @@
     <color name="colorAccent">#20963D</color>
     <color name="colorHintColor">#999999</color>
     <color name="text_color">#333333</color>
+    <color name="disable">#f2f2f2</color>
 
 </resources>

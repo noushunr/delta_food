@@ -33,7 +33,7 @@ class LocationWiseAdapter(
         holder?.binding?.tvSerial.text = "Serial No:  ${item.serialNo}"
         var quantityDetails = "PAC Quantity: ${item.pacQuantity}\nPacking Unit: ${item.packingUnit}\nAllocated Quantity: ${item.allowedQuantity}\nSTK Quantity: ${item.stkQuantity}"
         if (item?.location?.isNotEmpty()){
-            quantityDetails += "\nLot: ${item.location}"
+            quantityDetails += "\nLocation: ${item.location}"
         }
         holder?.binding?.tvQuantity.text = quantityDetails
 

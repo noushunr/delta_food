@@ -80,7 +80,7 @@
                             android:padding="@dimen/dimen10dp">
 
                             <EditText
-                                android:id="@+id/et_order"
+                                android:id="@+id/et_lot"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@null"
@@ -107,6 +107,7 @@
                             <EditText
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:id="@+id/et_slot"
                                 android:background="@null"
                                 android:hint="@string/sub_lot"
                                 android:singleLine="true"
@@ -124,6 +125,7 @@
                             android:layout_height="46dp"
                             android:layout_below="@+id/ll_order_site"
                             android:layout_marginTop="10dp"
+                            android:visibility="gone"
                             android:background="@drawable/drawable_edit_text_normal"
                             android:padding="@dimen/dimen10dp">
 
@@ -149,6 +151,7 @@
                             android:layout_height="46dp"
                             android:layout_below="@+id/ll_supplier"
                             android:layout_marginTop="10dp"
+                            android:visibility="gone"
                             android:background="@drawable/drawable_edit_text_normal"
                             android:padding="@dimen/dimen10dp">
 
@@ -174,6 +177,7 @@
                             android:layout_height="46dp"
                             android:layout_below="@+id/ll_internal"
                             android:layout_marginTop="10dp"
+                            android:visibility="gone"
                             android:background="@drawable/drawable_edit_text_normal"
                             android:padding="@dimen/dimen10dp">
 
@@ -199,6 +203,7 @@
                             android:layout_height="46dp"
                             android:layout_below="@+id/ll_rejected"
                             android:layout_marginTop="@dimen/dimen10dp"
+                            android:visibility="visible"
                             android:background="@drawable/drawable_edit_text_normal"
                             android:orientation="horizontal"
                             android:padding="@dimen/dimen10dp">
@@ -236,6 +241,7 @@
                             android:layout_height="46dp"
                             android:layout_below="@+id/rl_expiry"
                             android:layout_marginTop="@dimen/dimen10dp"
+                            android:visibility="gone"
                             android:background="@drawable/drawable_edit_text_normal"
                             android:orientation="horizontal"
                             android:padding="@dimen/dimen10dp">
@@ -273,6 +279,7 @@
                             android:layout_height="46dp"
                             android:layout_below="@+id/rl_use_by"
                             android:layout_marginTop="@dimen/dimen10dp"
+                            android:visibility="gone"
                             android:background="@drawable/drawable_edit_text_normal"
                             android:orientation="horizontal"
                             android:padding="@dimen/dimen10dp">
@@ -294,8 +301,6 @@
                         </RelativeLayout>
                     </LinearLayout>
                 </androidx.core.widget.NestedScrollView>
-
-
 
             </RelativeLayout>
 

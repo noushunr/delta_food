@@ -26,6 +26,8 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="0dp"
+                        android:layout_toLeftOf="@+id/tv_create"
+                        android:layout_toRightOf="@+id/layoutBackClick"
                         android:gravity="center_horizontal"
                         android:text="@string/purchase_receipt"
                         android:textAlignment="center"
@@ -36,6 +38,22 @@
 
                     </TextView>
 
+                    <TextView
+                        android:id="@+id/tv_create"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dimen10dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/create"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/secondary_title"
+                        android:textStyle="bold">
+
+                    </TextView>
                     <LinearLayout
                         android:id="@+id/layoutBackClick"
                         android:layout_width="@dimen/height_60_dp"
@@ -54,7 +72,8 @@
                 </RelativeLayout>
                 <androidx.core.widget.NestedScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/scrollView">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -114,9 +133,9 @@
                                     android:focusableInTouchMode="false"
                                     android:paddingHorizontal="5dp"
                                     android:singleLine="true"
-                                    tools:text="STD"
                                     android:textColor="#000"
-                                    android:textSize="16sp">
+                                    android:textSize="16sp"
+                                    tools:text="STD">
 
                                 </EditText>
 
@@ -176,8 +195,8 @@
                                     android:layout_toLeftOf="@+id/iv_search_ord"
                                     android:background="@null"
                                     android:clickable="false"
-                                    android:focusableInTouchMode="false"
                                     android:focusable="false"
+                                    android:focusableInTouchMode="false"
                                     android:paddingHorizontal="5dp"
                                     android:singleLine="true"
                                     android:text=""
@@ -290,15 +309,23 @@
                             android:layout_marginTop="@dimen/dimen20dp"
                             android:paddingHorizontal="@dimen/dimen20dp"
                             android:paddingBottom="@dimen/dimen20dp">
-                            <TextView
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:layout_marginTop="@dimen/dimen10dp"
-                                android:textColor="@color/text_color"
-                                android:text="@string/lines">
+                                android:layout_marginTop="@dimen/dimen10dp">
 
-                            </TextView>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="@string/lines"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="14sp">
+
+                                </TextView>
+
+                            </RelativeLayout>
+
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -515,12 +542,11 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="@null"
-                                    android:clickable="false"
-                                    android:focusable="false"
-                                    android:focusableInTouchMode="false"
                                     android:paddingHorizontal="5dp"
                                     android:singleLine="true"
                                     android:text=""
+                                    android:inputType="number"
+                                    android:digits="1234567890."
                                     android:textColor="#000"
                                     android:textSize="16sp">
 
@@ -795,6 +821,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="46dp"
                                 android:orientation="horizontal"
+                                android:id="@+id/rl_lot"
                                 android:background="@drawable/drawable_edit_text_normal"
                                 android:layout_marginTop="@dimen/dimen10dp"
                                 android:padding="@dimen/dimen10dp">
@@ -804,7 +831,6 @@
                                     android:layout_height="match_parent"
                                     android:background="@null"
                                     android:layout_toLeftOf="@+id/iv_search_lot"
-
                                     android:paddingHorizontal="5dp"
                                     android:singleLine="true"
                                     android:text=""
@@ -948,6 +974,21 @@
 
                                 </ImageView>
                             </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv_save"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textAlignment="center"
+                                android:text="@string/save"
+                                android:padding="@dimen/dimen10dp"
+                                android:background="@drawable/drawable_red_border"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16sp">
+
+                            </TextView>
                         </LinearLayout>
 
                         <LinearLayout
@@ -955,6 +996,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:background="@color/white"
+                            android:visibility="gone"
                             android:layout_marginTop="@dimen/dimen20dp"
                             android:paddingTop="@dimen/dimen10dp"
                             android:paddingBottom="@dimen/dimen30dp"

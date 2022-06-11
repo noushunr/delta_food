@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.deltafood.interfaces.SiteSelectListener
 import com.deltafood.adapter.SitesAdapter
+import com.deltafood.data.model.response.Sites
 import com.deltafood.data.preferences.PrefManager
 import com.deltafood.databinding.ActivitySetSiteBinding
 import com.deltafood.utils.NetworkListener
@@ -75,5 +76,9 @@ class SetSiteActivity : AppCompatActivity(), KodeinAware, NetworkListener, SiteS
 
     override fun onSiteClick(siteName: String) {
         this.siteName = siteName
+    }
+
+    override fun onSitesClick(siteName: Sites) {
+
     }
 }

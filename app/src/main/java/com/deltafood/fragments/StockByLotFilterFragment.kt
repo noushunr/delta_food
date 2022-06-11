@@ -7,8 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.fragment.app.activityViewModels
 import com.deltafood.R
+import com.deltafood.data.model.response.PurchaseOrder
+import com.deltafood.data.model.response.StockByLot
 import com.deltafood.databinding.FragmentStockByLotFilterBinding
+import com.deltafood.ui.stock_inventory.purchase_receipt.PurchaseViewModel
+import com.deltafood.utils.currentDate
+import com.deltafood.utils.formatDate
+import com.deltafood.utils.formattedCurrentDate
 import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -26,7 +33,8 @@ class StockByLotFilterFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var binding : FragmentStockByLotFilterBinding
-
+    var date = ""
+    val viewModel by activityViewModels<PurchaseViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -41,6 +49,16 @@ class StockByLotFilterFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentStockByLotFilterBinding.inflate(layoutInflater)
+        var stockByLot = viewModel?.filteredStockByLot
+        binding?.editExpire.setText(currentDate())
+        date = formattedCurrentDate()
+        if (stockByLot!=null){
+            binding?.etLot.setText(stockByLot?.lot!!)
+            binding?.etSlot.setText(stockByLot?.slot!!)
+
+            binding?.editExpire.setText(formatDate(stockByLot?.expDate!!))
+            date = stockByLot?.expDate!!
+        }
         binding?.layoutClose.setOnClickListener {
             activity?.onBackPressed()
         }
@@ -58,6 +76,18 @@ class StockByLotFilterFragment : Fragment() {
         }
         binding?.editUseBy?.setOnClickListener {
             calendarShow(binding?.editUseBy)
+        }
+        binding?.btnViewResult?.setOnClickListener {
+            var stockByLot = StockByLot()
+            stockByLot.lot = binding?.etLot.text.toString()
+            stockByLot.slot = binding?.etSlot.text.toString()
+            stockByLot.expDate = date
+
+            var isFilterCleared = stockByLot.lot.isEmpty() && stockByLot.lot.isEmpty()
+                    && stockByLot.expDate!!.isEmpty()
+
+            viewModel?.filterStockLot(stockByLot,isFilterCleared)
+            activity?.onBackPressed()
         }
         return binding?.root
     }
@@ -91,7 +121,8 @@ class StockByLotFilterFragment : Fragment() {
         val dpd = DatePickerDialog(requireActivity(), { view, year, monthOfYear, dayOfMonth ->
 
             // Display Selected date in textbox
-            editText.setText("$dayOfMonth/${monthOfYear+1}/$year")
+            binding?.editExpire.setText("$dayOfMonth/${String.format("%02d", monthOfYear+1)}/$year")
+            date = "$year${String.format("%02d", monthOfYear+1)}$dayOfMonth"
 
         }, year, month, day)
 

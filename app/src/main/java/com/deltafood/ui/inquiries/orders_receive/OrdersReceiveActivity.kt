@@ -72,6 +72,12 @@ class OrdersReceiveActivity : AppCompatActivity(), KodeinAware, NetworkListener 
             binding?.tvResults.text = "${it.size} Result"
             var adapter = OrdersReceiveAdapter(this, it)
             binding?.rvOrders.adapter = adapter
+            if (it?.size == 0){
+                binding?.tvEmpty.visibility = View.VISIBLE
+            }else{
+                binding?.tvEmpty.visibility = View.GONE
+            }
+
         }
 
     }

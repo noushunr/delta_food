@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.deltafood.R
 import com.deltafood.adapter.POInquiryAdapter
 import com.deltafood.data.model.response.POInquiry
@@ -19,6 +20,7 @@ import com.deltafood.fragments.PoInquiryProductFilterFragment
 import com.deltafood.fragments.PoOrderFilterFragment
 import com.deltafood.interfaces.PoInquiryProductSelectListener
 import com.deltafood.utils.NetworkListener
+import kotlinx.coroutines.launch
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.kodein
 import org.kodein.di.generic.instance
@@ -43,15 +45,21 @@ class POInquiryProductsActivity : AppCompatActivity() , KodeinAware, NetworkList
         binding?.layoutBackClick?.setOnClickListener {
             finish()
         }
-        viewModel?.searchPOInquiries(poNo,"","")
+        lifecycleScope.launch {
+            viewModel?.searchPOInquiries(poNo,"","")
+        }
+
         viewModel?.livePOInquiries?.observe(this){
             var adapter = POInquiryAdapter(this,it,object : PoInquiryProductSelectListener{
                 override fun onProductClick(products: POInquiry) {
                     var args = Bundle()
                     args.putString("product_id",products.productId)
+                    args.putString("product_name",products.description)
                     args.putString("pop_line",products.lineNo)
                     args.putString("uom",products.uom)
+                    args.putString("quantity_uom",products.qtyuom)
                     args.putString("quantity",products.remQty)
+                    args.putString("rcp_quantity",products.rcpQty)
                     var intent = Intent()
                     intent.putExtras(args)
                     setResult(RESULT_OK,intent)
@@ -60,6 +68,11 @@ class POInquiryProductsActivity : AppCompatActivity() , KodeinAware, NetworkList
 
             })
             binding?.rvProducts.adapter = adapter
+            if (it?.size == 0){
+                binding?.tvEmpty.visibility = View.VISIBLE
+            }else{
+                binding?.tvEmpty.visibility = View.GONE
+            }
         }
         binding?.layoutFilter?.setOnClickListener {
             val manager: FragmentManager = supportFragmentManager

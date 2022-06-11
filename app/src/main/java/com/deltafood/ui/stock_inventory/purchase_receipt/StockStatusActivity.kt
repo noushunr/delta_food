@@ -8,13 +8,10 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
-import com.deltafood.adapter.OrderSelectionAdapter
 import com.deltafood.adapter.StockStatusAdapter
 import com.deltafood.data.model.response.Status
 import com.deltafood.data.preferences.PrefManager
-import com.deltafood.databinding.ActivityOrderSelectionBinding
 import com.deltafood.databinding.ActivityStockStatusBinding
-import com.deltafood.fragments.FilterFragment
 import com.deltafood.fragments.StockFilterFragment
 import com.deltafood.interfaces.StatusSelectListener
 import com.deltafood.utils.NetworkListener
@@ -28,17 +25,19 @@ class StockStatusActivity : AppCompatActivity(), KodeinAware, NetworkListener {
     private val factory: PurchaseViewModelFactory by instance()
     private lateinit var binding : ActivityStockStatusBinding
     private lateinit var appPreferences : PrefManager
+    private var methodName = ""
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         binding = ActivityStockStatusBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+        methodName = intent?.getStringExtra("publicName")!!
         viewModel = ViewModelProvider(this, factory).get(PurchaseViewModel::class.java)
         viewModel?.listener = this
         appPreferences = PrefManager(this)
         var site = appPreferences?.setSite
         val mString = site!!.split(":").toTypedArray()
-        viewModel?.getStatus(mString[0])
+        viewModel?.getStatus(mString[0],methodName)
         supportActionBar?.hide()
         var adapter = StockStatusAdapter(this, mutableListOf(),object : StatusSelectListener{
             override fun onStatusClick(status: Status) {
@@ -56,6 +55,11 @@ class StockStatusActivity : AppCompatActivity(), KodeinAware, NetworkListener {
         binding?.rvStocks.adapter = adapter
         viewModel?.liveStatus?.observe(this){
             adapter?.submitList(it)
+            if (it?.size == 0){
+                binding?.tvEmpty.visibility = View.VISIBLE
+            }else{
+                binding?.tvEmpty.visibility = View.GONE
+            }
         }
 
         binding?.layoutBackClick.setOnClickListener {

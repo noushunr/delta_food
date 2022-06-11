@@ -9,12 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import com.deltafood.adapter.OrderSelectionAdapter
 import com.deltafood.adapter.UnitAdapter
 import com.deltafood.data.model.response.Unit
 import com.deltafood.databinding.FragmentUnitSelectionBinding
 import com.deltafood.interfaces.UnitSelectListener
-import com.deltafood.ui.inquiries.location_wise.LocationWiseViewModel
 import com.deltafood.ui.stock_inventory.purchase_receipt.PurchaseViewModel
 
 // TODO: Rename parameter arguments, choose names that match
@@ -34,6 +32,7 @@ class UnitSelectionFragment : Fragment() {
 
     private lateinit var binding : FragmentUnitSelectionBinding
     private var alUnits : ArrayList<Unit>?=null
+    private var unit = ""
     val viewModel by activityViewModels<PurchaseViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,9 +48,26 @@ class UnitSelectionFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_unit_selection,container,false)
         // Inflate the layout for this fragment
-        var adapter = UnitAdapter(requireContext(),alUnits,object : UnitSelectListener{
-            override fun onSiteClick(unit: String) {
-                viewModel?.units?.postValue(unit)
+        alUnits?.forEach {
+            if (it?.uomCon?.equals("0")){
+                unit = it?.uom
+            }
+        }
+        alUnits?.let {
+            if (it?.size == 0){
+                binding?.tvEmpty.visibility = View.VISIBLE
+            }else{
+                binding?.tvEmpty.visibility = View.GONE
+            }
+        }
+        var adapter = UnitAdapter(unit,alUnits,object : UnitSelectListener{
+            override fun onSiteClick(unit: Unit?) {
+                viewModel?.unit.postValue(unit?.uom)
+                viewModel?.units?.postValue("${unit?.uom}(${unit?.description})")
+                if (unit?.uomCon.equals("0"))
+                    viewModel?.unitCom.postValue("1")
+                else
+                    viewModel?.unitCom.postValue(unit?.uomCon)
                 activity?.onBackPressed()
             }
 

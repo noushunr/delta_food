@@ -24,6 +24,7 @@ class LoginViewModel(
 
     var name: String? = null
     var accessToken: String? = null
+    var userId: String? = null
 
     fun login() {
 
@@ -92,6 +93,7 @@ class LoginViewModel(
 //            errorMessage = response.data?.name.toString()
             name = data?.name
             accessToken = data?.token
+            userId = data?.userId
             listener?.onSuccess()
         } else {
             listener?.onError()

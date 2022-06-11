@@ -8,23 +8,23 @@ import org.simpleframework.xml.Root
  * Created by Noushad N on 10-05-2022.
  */
 @Root(name = "soapenv:Envelope")
-class XMLStatusRequest(var site:String) {
+class XMLStatusRequest(var site:String,var methodName : String) {
 
     @field:Element(name = "soapenv:Body")
-    var rootElement2 = ProductsRequestBody(site)
+    var rootElement2 = ProductsRequestBody(site,methodName)
 
     @Root
-    class ProductsRequestBody(var site:String) {
+    class ProductsRequestBody(var site:String,var methodName : String) {
 
         @field:Element(name = "wss:run")
-        var query = QueryRequest(site)
+        var query = QueryRequest(site,methodName)
 
         @Root
-        class QueryRequest(var site:String) {
+        class QueryRequest(var site:String,var methodName : String) {
             @field:Element(name = "callContext")
             var callContext = CallContext()
             @field:Element(name = "publicName")
-            var publicName = "ZSTKSTA"
+            var publicName = methodName
             @field:Element(data = true)
             var inputXml =  "<PARAM><GRP ID=\"GRP1\"><FLD NAME=\"SITE\">$site</FLD></GRP></PARAM>"
 

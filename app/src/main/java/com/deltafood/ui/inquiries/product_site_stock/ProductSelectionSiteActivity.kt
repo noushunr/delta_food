@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.deltafood.adapter.ProductSelectionAdapter
 import com.deltafood.data.model.response.Products
 import com.deltafood.data.preferences.PrefManager
@@ -16,6 +17,7 @@ import com.deltafood.databinding.ActivityProductSelectionSiteBinding
 import com.deltafood.fragments.ProductSiteFilterFragment
 import com.deltafood.interfaces.ProductSelectListener
 import com.deltafood.utils.NetworkListener
+import kotlinx.coroutines.launch
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.kodein
 import org.kodein.di.generic.instance
@@ -39,12 +41,17 @@ class ProductSelectionSiteActivity : AppCompatActivity(), KodeinAware, NetworkLi
         appPreferences = PrefManager(this)
         var site = appPreferences?.setSite
         val mString = site!!.split(":").toTypedArray()
-        viewModel?.getProductsBySite(mString[0])
+        lifecycleScope.launch {
+            viewModel?.getProductsBySite(mString[0])
+        }
+
         adapter = ProductSiteAdapter(this, mutableListOf(),object : ProductSelectListener {
             override fun onProductClick(products: Products) {
                 var args = Bundle()
                 args.putString("product_name",products.productName)
                 args.putString("product_id",products.productId)
+                args.putString("lot_management",products.locManagement)
+                args.putString("sno_management",products.serialNo)
                 var intent = Intent()
                 intent.putExtras(args)
                 setResult(RESULT_OK,intent)

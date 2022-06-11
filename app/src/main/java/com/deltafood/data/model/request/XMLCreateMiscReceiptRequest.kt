@@ -1,0 +1,54 @@
+package com.deltafood.data.model.request
+
+import org.simpleframework.xml.Attribute
+import org.simpleframework.xml.Element
+import org.simpleframework.xml.Root
+
+/**
+ * Created by Noushad N on 10-05-2022.
+ */
+@Root(name = "soapenv:Envelope")
+class XMLCreateMiscReceiptRequest(inputXML: String) {
+
+    @field:Element(name = "soapenv:Body")
+    var rootElement2 = ProductsRequestBody(inputXML)
+
+    @Root
+    class ProductsRequestBody(inputXML: String) {
+
+        @field:Element(name = "wss:run")
+        var query = QueryRequest(inputXML)
+
+        @Root
+        class QueryRequest(inputXML: String) {
+            @field:Element(name = "callContext")
+            var callContext = CallContext()
+            @field:Element(name = "publicName")
+            var publicName = "AOWSIMPORT"
+            @field:Element(data = true )
+            var inputXml =  "{ \"GRP1\": {\n" +
+                    "            \"I_MODIMP\": \"CWSSMR\", \n" +
+                    "            \"I_AOWSTA\": \"NO\",\n" +
+                    "            \"I_EXEC\": \"REALTIME\",\n" +
+                    "            \"I_RECORDSEP\": \"|\",\"I_FILE\":\"$inputXML|END\"}\n}"
+
+            @Root
+            class CallContext {
+                @field:Attribute(name = " xsi:type")
+                var type = "wss:CAdxCallContext"
+                @field:Element(name = "codeLang")
+                var codeLanguage = "ENG"
+                @field:Element(name = "poolAlias")
+                var poolAlias = "SEED"
+                @field:Element(name = "poolId")
+                var poolId = ""
+                @field:Element(name = "requestConfig")
+                var requestConfig = "<![CDATA[adxwss.optreturn=JSON&adxwss.beautify=true&adxwss.trace.on=off]]>"
+
+            }
+
+        }
+
+    }
+
+}

@@ -8,6 +8,7 @@ import com.deltafood.data.network.NetworkConnectionInterceptor
 import com.deltafood.data.repositories.InquiryRepositories
 import com.deltafood.data.repositories.PurchaseRepositories
 import com.deltafood.data.repositories.UserRepositories
+import com.deltafood.database.AppDatabase
 import com.deltafood.ui.inquiries.location_wise.LocationWiseViewModelFactory
 import com.deltafood.ui.inquiries.po_inquiry.POInquiryViewModelFactory
 import com.deltafood.ui.inquiries.product_site_stock.ProductSiteViewModelFactory
@@ -55,10 +56,11 @@ class MainApplication : Application(), KodeinAware {
 
         bind() from singleton { MyApi(instance()) }
         bind() from singleton { MySoapApi(instance()) }
+        bind() from singleton { AppDatabase(instance()) }
         bind() from singleton { NetworkConnectionInterceptor(instance()) }
         bind() from singleton { UserRepositories(instance(), instance()) }
         bind() from singleton { InquiryRepositories(instance(), instance()) }
-        bind() from singleton { PurchaseRepositories(instance(), instance()) }
+        bind() from singleton { PurchaseRepositories(instance(), instance(),instance()) }
 
 
         bind() from provider { LoginViewModelFactory(instance()) }

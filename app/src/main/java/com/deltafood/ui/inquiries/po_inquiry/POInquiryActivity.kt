@@ -108,6 +108,11 @@ class POInquiryActivity : AppCompatActivity() , KodeinAware, NetworkListener {
 
             })
             binding?.rvItems.adapter = adapter
+            if (it?.size == 0){
+                binding?.tvEmpty.visibility = View.VISIBLE
+            }else{
+                binding?.tvEmpty.visibility = View.GONE
+            }
         }
 
     }

@@ -74,7 +74,7 @@
             </RelativeLayout>
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/rv_orders"
                 android:scrollbars="none"
                 android:paddingTop="@dimen/dimen10dp"
@@ -84,6 +84,17 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
 
             </androidx.recyclerview.widget.RecyclerView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_empty"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="@string/no_record"
+                android:textColor="@color/black"
+
+                android:textSize="14sp"/>
         </LinearLayout>
         <ProgressBar
             style="?android:attr/progressBarStyleLarge"

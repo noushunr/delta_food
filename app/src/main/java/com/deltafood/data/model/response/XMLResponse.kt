@@ -1,6 +1,7 @@
 import com.deltafood.data.model.response.TechnicalInfos
 import org.simpleframework.xml.Attribute
 import org.simpleframework.xml.Element
+import org.simpleframework.xml.ElementList
 import org.simpleframework.xml.Root
 
 
@@ -29,6 +30,9 @@ class XMLResponse {
                 var type :String ?=null
                 @field:Element(required = false,name = "messages")
                 var messages : Messages? = null
+
+//                @ElementList(entry = "messages", inline = true)
+//                val messages: List<Messages>? = null
                 @field:Element(data = true,required = false)
                 var resultXml :String ?=null
                 @field:Element(name = "technicalInfos")

@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.deltafood"
-        minSdk 21
+        minSdk 24
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-
+    def room_version = "2.2.5"
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
@@ -73,4 +73,20 @@ dependencies {
         exclude group: 'stax', module: 'stax'
     }
     implementation "androidx.fragment:fragment-ktx:1.4.1"
+
+    //region Android Room
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    //endregion
+    implementation 'com.journeyapps:zxing-android-embedded:4.2.0'
+
+    // Barcode model dependencies
+    implementation 'com.google.mlkit:barcode-scanning:16.1.0'
+
+// CameraX dependencies
+    implementation "androidx.camera:camera-camera2:1.0.0-beta06"
+    implementation "androidx.camera:camera-lifecycle:1.0.0-beta06"
+    implementation "androidx.camera:camera-view:1.0.0-alpha13"
 }

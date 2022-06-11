@@ -1,10 +1,7 @@
 package com.deltafood.data.preferences
 
 import android.content.Context
-import com.deltafood.utils.KEY_IS_USER_LOGGED_IN
-import com.deltafood.utils.KEY_SET_SITE
-import com.deltafood.utils.KEY_USER_NAME
-import com.deltafood.utils.KEY_USER_TOKEN
+import com.deltafood.utils.*
 
 
 /**
@@ -34,6 +31,15 @@ class PrefManager(var context: Context?) {
         }
         set(token) {
             editor.putString(KEY_USER_TOKEN, token)
+            editor.commit()
+        }
+
+    var userId: String?
+        get() {
+            return sharedPreferences.getString(KEY_USER_ID, "")
+        }
+        set(token) {
+            editor.putString(KEY_USER_ID, token)
             editor.commit()
         }
 

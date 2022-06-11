@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:id="@+id/cl_main"
+        android:background="@color/white"
+        android:clickable="true"
+        tools:context=".ui.stock_inventory.purchase_receipt.OrderSelectionActivity">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:background="#f2f2f2"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorPrimary">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="0dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/select"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/secondary_title"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <LinearLayout
+                    android:id="@+id/layoutBackClick"
+                    android:layout_width="@dimen/height_60_dp"
+                    android:layout_height="@dimen/height_60_dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/imageViewBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_back_arrow"
+                        app:tint="@color/white">
+
+                    </ImageView>
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:orientation="horizontal"
+                android:background="@drawable/drawable_red_border"
+                android:layout_marginTop="@dimen/dimen10dp"
+                android:layout_marginHorizontal="@dimen/dimen10dp"
+                android:padding="@dimen/dimen10dp">
+
+                <EditText
+                    android:id="@+id/edit_unit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/iv_search"
+                    android:background="@null"
+                    android:hint="@string/search"
+                    android:paddingHorizontal="5dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="#000"
+                    android:textSize="16sp">
+
+                </EditText>
+                <ImageView
+                    android:id="@+id/iv_search"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="@dimen/dimen10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_search_new">
+
+                </ImageView>
+            </RelativeLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rv_location"
+                android:scrollbars="none"
+                android:paddingTop="@dimen/dimen10dp"
+                tools:listitem="@layout/item_unit"
+                tools:itemCount="10"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_empty"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="@string/no_record"
+                android:textColor="@color/black"
+
+                android:textSize="14sp"/>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

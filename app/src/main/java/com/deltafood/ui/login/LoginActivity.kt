@@ -34,7 +34,6 @@ class LoginActivity : AppCompatActivity(), KodeinAware, NetworkListener {
     }
 
     override fun onStarted() {
-
         binding?.progressCircular.visibility = View.VISIBLE
     }
 
@@ -42,6 +41,7 @@ class LoginActivity : AppCompatActivity(), KodeinAware, NetworkListener {
     override fun onSuccess() {
         appPreferences.userName = viewModel.name
         appPreferences.token = viewModel.accessToken
+        appPreferences.userId = viewModel.userId
 //        appPreferences.isUserLoggedIn = true
         binding?.progressCircular.visibility = View.GONE
 //        Toast.makeText(this,viewModel.errorMessage,Toast.LENGTH_LONG).show()

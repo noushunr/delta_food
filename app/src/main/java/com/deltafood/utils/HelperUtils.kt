@@ -33,6 +33,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 import okhttp3.MediaType
 import okio.BufferedSink
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 
 /*
@@ -247,6 +249,18 @@ fun currentDate():String{
     }
 
 }
+fun formattedDate(date: String): String {
+    var formattedString = date
+    val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+    var newDate :Date? = null
+    try {
+        newDate = dateFormat.parse(date)
+        formattedString = SimpleDateFormat("yyyyMMdd", Locale.getDefault()).format(newDate!!)
+    } catch (e: Exception) {
+        ////println(e.message)
+    }
+    return formattedString
+}
 fun formattedCurrentDate():String{
     return try {
         val sdf = SimpleDateFormat("yyyyMMdd")
@@ -255,6 +269,12 @@ fun formattedCurrentDate():String{
         ""
     }
 
+}
+fun roundOffDecimal(number: Double): Double? {
+    return number
+//    val df = DecimalFormat("#.##")
+//    df.roundingMode = RoundingMode.CEILING
+//    return df.format(number).toDouble()
 }
 object FilesObj {
 

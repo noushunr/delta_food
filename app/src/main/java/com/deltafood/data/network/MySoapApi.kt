@@ -1,7 +1,9 @@
 package com.deltafood.data.network
 
 import ProductResponse
+import XMLCreateResponse
 import XMLResponse
+import XMLStockCreateResponse
 import com.deltafood.data.model.request.*
 import com.deltafood.utils.BASE_SOAP_API_URL
 import okhttp3.OkHttpClient
@@ -120,6 +122,96 @@ interface MySoapApi {
     suspend fun getStatus(
         @Body body: XMLStatusRequest
     ) : Response<XMLResponse>
+
+    @Headers(
+        "Content-Type: text/xml;charset=UTF-8",
+        "soapaction: read"
+    )
+    @POST("CAdxWebServiceXmlCC?wsdl/")
+    suspend fun createPurchaseReceipt(
+        @Body body: XMLCreatePurchaseReceiptRequest
+    ) : Response<XMLCreateResponse>
+
+    @Headers(
+        "Content-Type: text/xml;charset=UTF-8",
+        "soapaction: read"
+    )
+    @POST("CAdxWebServiceXmlCC?wsdl/")
+    suspend fun createMiscReceipt(
+        @Body body: XMLCreateMiscReceiptRequest
+    ) : Response<XMLCreateResponse>
+
+    @Headers(
+        "Content-Type: text/xml;charset=UTF-8",
+        "soapaction: read"
+    )
+    @POST("CAdxWebServiceXmlCC?wsdl/")
+    suspend fun getTransaction(
+        @Body body: XMLTransactionRequest
+    ) : Response<XMLResponse>
+
+    @Headers(
+        "Content-Type: text/xml;charset=UTF-8",
+        "soapaction: read"
+    )
+    @POST("CAdxWebServiceXmlCC?wsdl/")
+    suspend fun getStockLocations(
+        @Body body: XMLStockLocationsRequest
+    ) : Response<XMLResponse>
+
+    @Headers(
+        "Content-Type: text/xml;charset=UTF-8",
+        "soapaction: read"
+    )
+    @POST("CAdxWebServiceXmlCC?wsdl/")
+    suspend fun getStock(
+        @Body body: XMLStockListRequest
+    ) : Response<XMLResponse>
+
+    @Headers(
+        "Content-Type: text/xml;charset=UTF-8",
+        "soapaction: read"
+    )
+    @POST("CAdxWebServiceXmlCC?wsdl/")
+    suspend fun getSites(
+        @Body body: XMLSitesRequest
+    ) : Response<XMLResponse>
+
+    @Headers(
+        "Content-Type: text/xml;charset=UTF-8",
+        "soapaction: read"
+    )
+    @POST("CAdxWebServiceXmlCC?wsdl/")
+    suspend fun checkProductManaged(
+        @Body body: XMLCheckProductSiteRequest
+    ) : Response<XMLResponse>
+
+    @Headers(
+        "Content-Type: text/xml;charset=UTF-8",
+        "soapaction: read"
+    )
+    @POST("CAdxWebServiceXmlCC?wsdl/")
+    suspend fun getProductQuantity(
+        @Body body: XMLProductQuantityRequest
+    ) : Response<ProductResponse>
+
+    @Headers(
+        "Content-Type: text/xml;charset=UTF-8",
+        "soapaction: read"
+    )
+    @POST("CAdxWebServiceXmlCC?wsdl/")
+    suspend fun getStockByLot(
+        @Body body: XMLLotRequest
+    ) : Response<XMLResponse>
+
+    @Headers(
+        "Content-Type: text/xml;charset=UTF-8",
+        "soapaction: read"
+    )
+    @POST("CAdxWebServiceXmlCC?wsdl/")
+    suspend fun createStockChange(
+        @Body body:  XMLCreateStockChangeRequest
+    ) : Response<XMLStockCreateResponse>
 
     companion object{
         operator fun invoke(

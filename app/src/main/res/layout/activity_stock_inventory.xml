@@ -234,12 +234,11 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="0dp"
                     android:padding="@dimen/dimen10dp"
-                    
+
                     android:text="@string/stock_change"
                     android:textAllCaps="false"
                     android:textColor="@color/text_color"
-                    android:textSize="@dimen/secondary_title"
-                    >
+                    android:textSize="@dimen/secondary_title">
 
                 </TextView>
                 <ImageView

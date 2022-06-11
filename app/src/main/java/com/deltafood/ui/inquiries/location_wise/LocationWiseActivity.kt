@@ -59,6 +59,11 @@ class LocationWiseActivity : AppCompatActivity(), KodeinAware, NetworkListener {
             binding?.tvResults.text = "${it.size} Result"
             var adapter = LocationWiseAdapter(this, it)
             binding?.rvLocation.adapter = adapter
+            if (it?.size == 0){
+                binding?.tvEmpty.visibility = View.VISIBLE
+            }else{
+                binding?.tvEmpty.visibility = View.GONE
+            }
         }
     }
     private fun searchLocations(){

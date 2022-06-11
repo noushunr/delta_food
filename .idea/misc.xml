@@ -57,6 +57,52 @@
         <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/item_stock_status.xml" value="0.38125" />
         <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/layout/item_unit.xml" value="0.38125" />
         <entry key="..\:/Users/TILTLABS/Downloads/DeltaFood/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1305" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/drawable-hdpi/drawable_edit_text_disabled.xml" value="0.1125" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/drawable-v24/drawable_bg.xml" value="0.1125" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/drawable/drawable_edit_text_normal.xml" value="0.1125" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/drawable/drawable_red_border.xml" value="0.1125" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_inter_site_transfers.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_location_selection.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_location_wise.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_lot_selection.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_miscellaneous_receipt.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_order_line_selection.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_order_selection.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_orders_receive.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_po_inquiry.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_poinquiry_products.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_ponumber_selection.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_product_selection.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_product_selection_site.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_product_site_stock.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_purchase_receipt.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_scanner.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_site_selection.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_stock_by_lot.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_stock_change_transactions.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_stock_inventory.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_stock_selection.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_stock_status.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/activity_transaction_selection.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/fragment_location_selection.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/fragment_location_selection_filter.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/fragment_site_filter.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/fragment_stock_by_lot_filter.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/fragment_stock_filter.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/fragment_stock_location.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/fragment_transaction_filter.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/fragment_unit_selection.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/item_location_selection.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/item_order_line_selection.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/item_po_inquiry.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/item_po_order_selection.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/item_products_site.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/item_site.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/item_sites.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/item_stock.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/item_stock_by_lot.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/item_transactions.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TILTLABS/delta_food/app/src/main/res/layout/item_unit.xml" value="0.22826086956521738" />
       </map>
     </option>
   </component>

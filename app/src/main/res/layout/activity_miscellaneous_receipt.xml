@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cl_main"
+        android:background="#f2f2f2"
+        tools:context=".ui.stock_inventory.misc_receipt.MiscellaneousReceiptActivity">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/colorPrimary">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/tv_create"
+                        android:layout_toRightOf="@+id/layoutBackClick"
+                        android:gravity="center_horizontal"
+                        android:text="@string/misc_receipt"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/secondary_title"
+                        android:textStyle="bold">
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/tv_create"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dimen10dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/create"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/secondary_title"
+                        android:textStyle="bold">
+
+                    </TextView>
+                    <LinearLayout
+                        android:id="@+id/layoutBackClick"
+                        android:layout_width="@dimen/height_60_dp"
+                        android:layout_height="@dimen/height_60_dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/imageViewBack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_back_arrow"
+                            app:tint="@color/white">
+
+                        </ImageView>
+                    </LinearLayout>
+                </RelativeLayout>
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/scrollView">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@color/white"
+                            android:padding="@dimen/dimen20dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:visibility="gone"
+                                android:textColor="@color/text_color"
+                                android:text="@string/receipt">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv_site_name"
+                                android:textSize="14sp"
+                                android:background="@drawable/drawable_bg"
+                                android:padding="@dimen/dimen10dp"
+
+                                android:textColor="@color/text_color"
+                                android:text="">
+
+                            </TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:textColor="@color/colorPrimary"
+                                android:text="@string/txn">
+
+                            </TextView>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:orientation="horizontal"
+                                android:background="@drawable/drawable_edit_text_normal"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:padding="@dimen/dimen10dp">
+
+                                <EditText
+                                    android:id="@+id/edit_txn"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_toLeftOf="@+id/iv_search"
+                                    android:background="@null"
+                                    android:clickable="false"
+                                    android:editable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:paddingHorizontal="5dp"
+                                    android:singleLine="true"
+                                    tools:text="STD"
+                                    android:textColor="#000"
+                                    android:textSize="16sp">
+
+                                </EditText>
+
+                                <ImageView
+                                    android:id="@+id/iv_search"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/dimen10dp"
+                                    android:layout_toLeftOf="@+id/view"
+                                    android:paddingVertical="3dp"
+                                    android:src="@drawable/ic_search_new">
+
+                                </ImageView>
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/view"
+                                    android:background="#c6c6c6"
+                                    android:layout_marginRight="@dimen/dimen10dp"
+                                    android:layout_toLeftOf="@+id/iv_qr">
+
+                                </View>
+
+                                <ImageView
+                                    android:id="@+id/iv_qr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:paddingVertical="2dp"
+                                    android:src="@drawable/ic_qr_code">
+
+                                </ImageView>
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@color/white"
+                            android:layout_marginTop="@dimen/dimen20dp"
+                            android:paddingHorizontal="@dimen/dimen20dp"
+                            android:paddingBottom="@dimen/dimen20dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:textColor="@color/text_color"
+                                android:text="@string/lines">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dimen20dp"
+                                android:textColor="@color/colorPrimary"
+                                android:text="@string/product">
+
+                            </TextView>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:id="@+id/rl_product"
+                                android:orientation="horizontal"
+                                android:background="@drawable/drawable_edit_text_normal"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:padding="@dimen/dimen10dp">
+
+                                <EditText
+                                    android:id="@+id/edit_product"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_toLeftOf="@+id/iv_search_product"
+                                    android:background="@null"
+                                    android:paddingHorizontal="5dp"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textSize="16sp">
+
+                                </EditText>
+
+                                <ImageView
+                                    android:id="@+id/iv_search_product"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dimen10dp"
+                                    android:layout_toLeftOf="@+id/view_product"
+                                    android:paddingVertical="3dp"
+                                    android:src="@drawable/ic_search_new">
+
+                                </ImageView>
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/view_product"
+                                    android:background="#c6c6c6"
+                                    android:layout_marginRight="@dimen/dimen10dp"
+                                    android:layout_toLeftOf="@+id/iv_qr_product">
+
+                                </View>
+
+                                <ImageView
+                                    android:id="@+id/iv_qr_product"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:paddingVertical="2dp"
+                                    android:src="@drawable/ic_qr_code">
+
+                                </ImageView>
+                            </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:textColor="@color/colorPrimary"
+                                android:text="@string/unit">
+
+                            </TextView>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:id="@+id/rl_unit"
+                                android:orientation="horizontal"
+                                android:background="@drawable/drawable_edit_text_normal"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:padding="@dimen/dimen10dp">
+
+                                <EditText
+                                    android:id="@+id/edit_unit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_toLeftOf="@+id/iv_search_unit"
+                                    android:background="@null"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:paddingHorizontal="5dp"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textSize="16sp">
+
+                                </EditText>
+
+                                <ImageView
+                                    android:id="@+id/iv_search_unit"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/dimen10dp"
+                                    android:layout_toLeftOf="@+id/view_unit"
+                                    android:paddingVertical="3dp"
+                                    android:src="@drawable/ic_search_new">
+
+                                </ImageView>
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/view_unit"
+                                    android:background="#c6c6c6"
+                                    android:layout_marginRight="@dimen/dimen10dp"
+                                    android:layout_toLeftOf="@+id/iv_qr_unit">
+
+                                </View>
+
+                                <ImageView
+                                    android:id="@+id/iv_qr_unit"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:paddingVertical="2dp"
+                                    android:src="@drawable/ic_qr_code">
+
+                                </ImageView>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:textColor="@color/colorPrimary"
+                                android:text="@string/qty">
+
+                            </TextView>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:orientation="horizontal"
+                                android:background="@drawable/drawable_edit_text_normal"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:padding="@dimen/dimen10dp">
+
+                                <EditText
+                                    android:id="@+id/edit_qty"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:inputType="number"
+                                    android:paddingHorizontal="5dp"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textSize="16sp">
+
+                                </EditText>
+
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:visibility="gone"
+                                android:textColor="@color/colorPrimary"
+                                android:text="@string/ctr">
+
+                            </TextView>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:orientation="horizontal"
+                                android:visibility="gone"
+                                android:background="@drawable/drawable_edit_text_normal"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:padding="@dimen/dimen10dp">
+                                <EditText
+                                    android:id="@+id/edit_ctr"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:layout_toLeftOf="@+id/iv_search_ctr"
+
+                                    android:paddingHorizontal="5dp"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textSize="16sp">
+
+                                </EditText>
+
+                                <ImageView
+                                    android:id="@+id/iv_search_ctr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/dimen10dp"
+                                    android:layout_toLeftOf="@+id/view_ctr"
+                                    android:paddingVertical="3dp"
+                                    android:src="@drawable/ic_search_new">
+
+                                </ImageView>
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/view_ctr"
+                                    android:background="#c6c6c6"
+                                    android:layout_marginRight="@dimen/dimen10dp"
+                                    android:layout_toLeftOf="@+id/iv_qr_ctr">
+
+                                </View>
+
+                                <ImageView
+                                    android:id="@+id/iv_qr_ctr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:paddingVertical="2dp"
+                                    android:src="@drawable/ic_qr_code">
+
+                                </ImageView>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:textColor="@color/colorPrimary"
+                                android:visibility="gone"
+                                android:text="@string/lpn">
+
+                            </TextView>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:orientation="horizontal"
+                                android:visibility="gone"
+                                android:background="@drawable/drawable_edit_text_normal"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:padding="@dimen/dimen10dp">
+                                <EditText
+                                    android:id="@+id/edit_lpn"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:layout_toLeftOf="@+id/iv_search_lpn"
+
+                                    android:paddingHorizontal="5dp"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textSize="16sp">
+
+                                </EditText>
+
+                                <ImageView
+                                    android:id="@+id/iv_search_lpn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/dimen10dp"
+                                    android:layout_toLeftOf="@+id/view_lpn"
+                                    android:paddingVertical="3dp"
+                                    android:src="@drawable/ic_search_new">
+
+                                </ImageView>
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/view_lpn"
+                                    android:background="#c6c6c6"
+                                    android:layout_marginRight="@dimen/dimen10dp"
+                                    android:layout_toLeftOf="@+id/iv_qr_lpn">
+
+                                </View>
+
+                                <ImageView
+                                    android:id="@+id/iv_qr_lpn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:paddingVertical="2dp"
+                                    android:src="@drawable/ic_qr_code">
+
+                                </ImageView>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:textColor="@color/colorPrimary"
+                                android:text="@string/sta">
+
+                            </TextView>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:orientation="horizontal"
+                                android:id="@+id/rl_status"
+                                android:background="@drawable/drawable_edit_text_normal"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:padding="@dimen/dimen10dp">
+
+                                <EditText
+                                    android:id="@+id/edit_sta"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_toLeftOf="@+id/iv_search_sta"
+                                    android:background="@null"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:paddingHorizontal="5dp"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textSize="16sp">
+
+                                </EditText>
+
+                                <ImageView
+                                    android:id="@+id/iv_search_sta"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/dimen10dp"
+                                    android:layout_toLeftOf="@+id/view_sta"
+                                    android:paddingVertical="3dp"
+                                    android:src="@drawable/ic_search_new">
+
+                                </ImageView>
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/view_sta"
+                                    android:background="#c6c6c6"
+                                    android:layout_marginRight="@dimen/dimen10dp"
+                                    android:layout_toLeftOf="@+id/iv_qr_sta">
+
+                                </View>
+
+                                <ImageView
+                                    android:id="@+id/iv_qr_sta"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:paddingVertical="2dp"
+                                    android:src="@drawable/ic_qr_code">
+
+                                </ImageView>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:textColor="@color/colorPrimary"
+                                android:text="@string/loc">
+
+                            </TextView>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:id="@+id/rl_location"
+                                android:orientation="horizontal"
+                                android:background="@drawable/drawable_edit_text_normal"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:padding="@dimen/dimen10dp">
+
+                                <EditText
+                                    android:id="@+id/edit_loc"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:paddingHorizontal="5dp"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textSize="16sp">
+
+                                </EditText>
+
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:textColor="@color/colorPrimary"
+                                android:text="@string/supl">
+
+                            </TextView>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:id="@+id/rl_supplier"
+                                android:orientation="horizontal"
+                                android:background="@drawable/drawable_edit_text_normal"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:padding="@dimen/dimen10dp">
+                                <EditText
+                                    android:id="@+id/edit_supl"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+
+                                    android:paddingHorizontal="5dp"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textSize="16sp">
+
+                                </EditText>
+
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:textColor="@color/colorPrimary"
+                                android:text="@string/lot">
+
+                            </TextView>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:id="@+id/ll_lot"
+                                android:background="@drawable/drawable_edit_text_normal">
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="46dp"
+                                    android:id="@+id/rl_lot"
+                                    android:orientation="horizontal"
+
+
+                                    android:padding="@dimen/dimen10dp">
+                                    <EditText
+                                        android:id="@+id/edit_lot"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@null"
+                                        android:layout_toLeftOf="@+id/iv_search_lot"
+
+                                        android:paddingHorizontal="5dp"
+                                        android:singleLine="true"
+                                        android:text=""
+                                        android:textColor="#000"
+                                        android:textSize="16sp">
+
+                                    </EditText>
+
+                                    <ImageView
+                                        android:id="@+id/iv_search_lot"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginRight="@dimen/dimen10dp"
+                                        android:layout_toLeftOf="@+id/view_lot"
+                                        android:paddingVertical="3dp"
+                                        android:src="@drawable/ic_search_new">
+
+                                    </ImageView>
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/view_lot"
+                                        android:background="#c6c6c6"
+                                        android:layout_marginRight="@dimen/dimen10dp"
+                                        android:layout_toLeftOf="@+id/iv_qr_lot">
+
+                                    </View>
+
+                                    <ImageView
+                                        android:id="@+id/iv_qr_lot"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:paddingVertical="2dp"
+                                        android:src="@drawable/ic_qr_code">
+
+                                    </ImageView>
+                                </RelativeLayout>
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:textColor="@color/colorPrimary"
+                                android:text="@string/serial">
+
+                            </TextView>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:id="@+id/rl_serial"
+                                android:orientation="horizontal"
+                                android:background="@drawable/drawable_edit_text_normal"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:padding="@dimen/dimen10dp">
+                                <EditText
+                                    android:id="@+id/edit_serial"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+
+                                    android:paddingHorizontal="5dp"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textSize="16sp">
+
+                                </EditText>
+
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:textColor="@color/colorPrimary"
+                                android:text="@string/expire">
+
+                            </TextView>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/ll_expiry"
+                                android:background="@drawable/drawable_edit_text_normal"
+                                android:layout_marginTop="@dimen/dimen10dp">
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="46dp"
+                                    android:orientation="horizontal"
+                                    android:id="@+id/rl_expiry"
+
+                                    android:padding="@dimen/dimen10dp">
+                                    <EditText
+                                        android:id="@+id/edit_expire"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@null"
+                                        android:layout_toStartOf="@+id/iv_calendar"
+                                        android:editable="false"
+                                        android:focusableInTouchMode="false"
+                                        android:paddingHorizontal="5dp"
+                                        android:singleLine="true"
+                                        android:text=""
+                                        android:textColor="#000"
+                                        android:textSize="16sp">
+
+                                    </EditText>
+                                    <ImageView
+                                        android:id="@+id/iv_calendar"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:paddingVertical="3dp"
+                                        android:src="@drawable/ic_calendar">
+
+                                    </ImageView>
+                                </RelativeLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_save"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textAlignment="center"
+                            android:text="@string/save"
+                            android:padding="@dimen/dimen10dp"
+                            android:layout_marginHorizontal="@dimen/dimen20dp"
+                            android:layout_marginBottom="@dimen/dimen20dp"
+                            android:background="@drawable/drawable_red_border"
+                            android:layout_marginTop="@dimen/dimen20dp"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp">
+
+                        </TextView>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@color/white"
+                            android:visibility="gone"
+                            android:layout_marginTop="@dimen/dimen20dp"
+                            android:paddingTop="@dimen/dimen10dp"
+                            android:paddingBottom="@dimen/dimen30dp"
+                            android:paddingHorizontal="@dimen/dimen20dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:textColor="@color/text_color"
+                                android:text="@string/lines">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:textColor="@color/colorPrimary"
+                                android:text="@string/major_v">
+
+                            </TextView>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:orientation="horizontal"
+                                android:background="@drawable/drawable_edit_text_normal"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:padding="@dimen/dimen10dp">
+                                <EditText
+                                    android:id="@+id/edit_majorv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+
+                                    android:paddingHorizontal="5dp"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textSize="16sp">
+
+                                </EditText>
+                            </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:textColor="@color/colorPrimary"
+                                android:text="@string/minor_v">
+
+                            </TextView>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:orientation="horizontal"
+                                android:background="@drawable/drawable_edit_text_normal"
+                                android:layout_marginTop="@dimen/dimen10dp"
+                                android:padding="@dimen/dimen10dp">
+                                <EditText
+                                    android:id="@+id/edit_minorv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+
+                                    android:paddingHorizontal="5dp"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textSize="16sp">
+
+                                </EditText>
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+
+            </LinearLayout>
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:id="@+id/progress_circular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+</layout>
